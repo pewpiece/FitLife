@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fitlife Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Fitlife Club Logo">
+                <span>Fitlife Club</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="wellness-tips.html" class="nav-link">Wellness Tips</a></li>
+                <li><a href="mental-health.html" class="nav-link">Mental Health</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="join-us.html" class="nav-link cta-btn">Join Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team - we're here to help you on your wellness journey</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Techspire College<br>Kathmandu, Nepal<br>Bagmati Province</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main: +977-1-4567890<br>Mobile: +977-9841234567<br>Mon-Fri: 6AM-10PM</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>info@techspirecollege.edu.np<br>fitness@techspirecollege.edu.np<br>wellness@techspirecollege.edu.np</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 6:00 AM - 10:00 PM<br>Sat-Sun: 7:00 AM - 9:00 PM<br>Holidays: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="membership">Membership Inquiry</option>
+                                    <option value="classes">Class Information</option>
+                                    <option value="personal-training">Personal Training</option>
+                                    <option value="nutrition">Nutrition Counseling</option>
+                                    <option value="mental-health">Mental Health Services</option>
+                                    <option value="events">Events & Workshops</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for wellness tips and updates
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="map-container">
+                    <h2>Find Us</h2>
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.6871049387!2d85.31398731506198!3d27.69769998279441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199a06c2eaf9%3A0xc5670a9173e161de!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1234567890123"
+                            width="100%"
+                            height="300"
+                            style="border:0; border-radius: 10px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="directions">
+                        <h3>Getting Here</h3>
+                        <ul>
+                            <li><i class="fas fa-car"></i> Parking available on campus</li>
+                            <li><i class="fas fa-bus"></i> Local buses and microbuses available</li>
+                            <li><i class="fas fa-taxi"></i> Taxi and ride-sharing services</li>
+                            <li><i class="fas fa-motorcycle"></i> Two-wheeler parking available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What should I bring for my first visit?</h3>
+                    <p>Bring comfortable workout clothes, athletic shoes, a water bottle, and a towel. We provide all necessary equipment for your workout.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer trial memberships?</h3>
+                    <p>Yes! We offer a 7-day free trial for new members. This includes access to all facilities and one complimentary personal training session.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are your cancellation policies?</h3>
+                    <p>You can cancel your membership with 30 days' notice. We also offer membership freezes for up to 3 months for medical or travel reasons.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you have childcare services?</h3>
+                    <p>We offer supervised childcare during peak hours (9 AM - 12 PM and 5 PM - 8 PM) for children ages 6 months to 12 years.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are personal trainers included?</h3>
+                    <p>Personal training sessions are included with Premium and Elite memberships. Basic members can book sessions at discounted rates.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What safety measures do you have?</h3>
+                    <p>We maintain strict cleanliness protocols, have certified staff on-site, emergency procedures, and all equipment is regularly inspected and maintained.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Visit us today for a tour and see how Fitlife Club can transform your wellness routine.</p>
+            <div class="cta-buttons">
+                <a href="join-us.html" class="btn btn-primary btn-large">Join Now</a>
+                <a href="tel:+97714567890" class="btn btn-secondary btn-large">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitlife Club</h3>
+                    <p>Transforming lives through fitness, nutrition, and mental wellness.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="wellness-tips.html">Wellness Tips</a></li>
+                        <li><a href="mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Techspire College, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977-1-4567890</p>
+                    <p><i class="fas fa-envelope"></i> info@techspirecollege.edu.np</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fitlife Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>

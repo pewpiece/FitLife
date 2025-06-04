@@ -1,0 +1,14 @@
+This directory contains images for the Fitlife Club website.
+
+Required images:
+- logo.png (Club logo)
+- banner.jpg (Main banner image)
+- fitness.jpg (Fitness activities)
+- vegan-food.jpg (Nutrition/healthy food)
+- mental-health.jpg (Mental wellness)
+- team-1.jpg through team-4.jpg (Team member photos)
+- cardio.jpg (Cardio exercises)
+- yoga.jpg (Yoga/flexibility)
+- functional.jpg (Functional training)
+
+Note: Replace this file with actual images for production use.

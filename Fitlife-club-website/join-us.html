@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Fitlife Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Fitlife Club Logo">
+                <span>Fitlife Club</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="wellness-tips.html" class="nav-link">Wellness Tips</a></li>
+                <li><a href="mental-health.html" class="nav-link">Mental Health</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="join-us.html" class="nav-link cta-btn active">Join Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Fitlife Club</h1>
+            <p>Start your transformation journey today with our comprehensive wellness programs</p>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section class="membership-plans">
+        <div class="container">
+            <h2>Choose Your Membership Plan</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Basic</h3>
+                        <div class="plan-price">
+                            <span class="currency">Rs.</span>
+                            <span class="amount">2,900</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Access to gym equipment</li>
+                        <li><i class="fas fa-check"></i> 2 group classes per week</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-check"></i> Basic nutrition guidance</li>
+                        <li><i class="fas fa-times"></i> Personal training</li>
+                        <li><i class="fas fa-times"></i> Mental health sessions</li>
+                    </ul>
+                    <button class="btn btn-outline plan-select" data-plan="basic">Select Plan</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="plan-price">
+                            <span class="currency">Rs.</span>
+                            <span class="amount">5,900</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Basic features</li>
+                        <li><i class="fas fa-check"></i> Unlimited group classes</li>
+                        <li><i class="fas fa-check"></i> 2 personal training sessions</li>
+                        <li><i class="fas fa-check"></i> Nutrition counseling</li>
+                        <li><i class="fas fa-check"></i> Mental health workshops</li>
+                        <li><i class="fas fa-check"></i> Priority booking</li>
+                    </ul>
+                    <button class="btn btn-primary plan-select" data-plan="premium">Select Plan</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Elite</h3>
+                        <div class="plan-price">
+                            <span class="currency">Rs.</span>
+                            <span class="amount">9,900</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Premium features</li>
+                        <li><i class="fas fa-check"></i> Unlimited personal training</li>
+                        <li><i class="fas fa-check"></i> One-on-one nutrition coaching</li>
+                        <li><i class="fas fa-check"></i> Mental health counseling</li>
+                        <li><i class="fas fa-check"></i> Exclusive member events</li>
+                        <li><i class="fas fa-check"></i> 24/7 facility access</li>
+                    </ul>
+                    <button class="btn btn-outline plan-select" data-plan="elite">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Form -->
+    <section class="membership-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Complete Your Membership</h2>
+                <form id="membershipForm" class="membership-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth *</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emergencyContact">Emergency Contact Name *</label>
+                        <input type="text" id="emergencyContact" name="emergencyContact" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emergencyPhone">Emergency Contact Phone *</label>
+                        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fitnessGoals">Fitness Goals</label>
+                        <textarea id="fitnessGoals" name="fitnessGoals" rows="3" placeholder="Tell us about your fitness goals and what you hope to achieve..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medicalConditions">Medical Conditions/Injuries</label>
+                        <textarea id="medicalConditions" name="medicalConditions" rows="3" placeholder="Please list any medical conditions or injuries we should be aware of..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectedPlan">Selected Plan *</label>
+                        <select id="selectedPlan" name="selectedPlan" required>
+                            <option value="">Select a plan</option>
+                            <option value="basic">Basic - Rs. 2,900/month</option>
+                            <option value="premium">Premium - Rs. 5,900/month</option>
+                            <option value="elite">Elite - Rs. 9,900/month</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" target="_blank">Terms and Conditions</a> *
+                        </label>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Subscribe to our newsletter for wellness tips and updates
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="waiver" name="waiver" required>
+                            <span class="checkmark"></span>
+                            I acknowledge that I am participating in fitness activities at my own risk *
+                        </label>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Complete Membership</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitlife Club</h3>
+                    <p>Transforming lives through fitness, nutrition, and mental wellness.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="wellness-tips.html">Wellness Tips</a></li>
+                        <li><a href="mental-health.html">Mental Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Techspire College, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977-1-4567890</p>
+                    <p><i class="fas fa-envelope"></i> info@techspirecollege.edu.np</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fitlife Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>
