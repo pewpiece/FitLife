@@ -1,7 +1,0 @@
-This directory contains media files for the Fitlife Club website.
-
-Required media files:
-- intro-video.mp4 (Club introduction video)
-- meditation-audio.mp3 (Wellness audio content)
-
-Note: Replace this file with actual media files for production use.

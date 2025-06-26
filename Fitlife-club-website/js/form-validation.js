@@ -272,18 +272,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Auto-format phone numbers
+    // Handle Nepali phone numbers
     document.querySelectorAll('input[type="tel"]').forEach(input => {
         input.addEventListener('input', function() {
+            // Remove any non-digit characters
             let value = this.value.replace(/\D/g, '');
-            if (value.length >= 6) {
-                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-            } else if (value.length >= 3) {
-                value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+            
+            // Restrict to 10 digits
+            if (value.length > 10) {
+                value = value.slice(0, 10);
             }
+            
+            // Ensure starts with 98
+            if (value.length >= 2 && value.substring(0, 2) !== '98') {
+                value = '98' + value.substring(2);
+            }
+            
             this.value = value;
         });
     });
+
+    // Validate phone number
+    function validatePhone(number) {
+        // Must be exactly 10 digits and start with 98
+        return /^98\d{8}$/.test(number);
+    }
 
     console.log('Form validation initialized');
 });
