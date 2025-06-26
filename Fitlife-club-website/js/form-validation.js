@@ -149,22 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = originalText;
             submitButton.disabled = false;
 
-            // Show success message
-            showMessage('Membership application submitted successfully! We will contact you within 24 hours.', 'success');
-            
-            // Reset form
-            membershipForm.reset();
-            
-            // Clear plan selection
-            document.querySelectorAll('.plan-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-
-            // Scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Redirect to thank-you page
+            window.location.href = 'thank-you.html';
         }, 2000);
     }
 
