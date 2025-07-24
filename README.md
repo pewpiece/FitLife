@@ -46,7 +46,6 @@ FitLife/
 │   ├── events.html
 │   ├── join-us.html
 │   ├── mental-health.html
-│   ├── thank-you.html
 │   └── wellness-tips.html
 └── README.md
 ```
