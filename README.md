@@ -15,7 +15,6 @@ FitLife Club is a fitness club website that combines physical fitness, mental we
 - 🤝 Community engagement features
 - 📱 Fully responsive design for all devices
 - 📝 Membership application form with validation
-- 🎉 Thank you page for successful submissions
 - 📧 Newsletter subscription system
 - 📞 Contact form with validation
 
@@ -24,7 +23,6 @@ FitLife Club is a fitness club website that combines physical fitness, mental we
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap (for responsive design)
 - Font Awesome for icons
 - Modern CSS features (backdrop-filter, transitions, etc.)
 
@@ -58,7 +56,7 @@ FitLife/
 - Edge (latest)
 
 ## 📸 Screenshots
-
+![alt text](<Screenshot from 2025-07-24 15-57-03.png>)
 (Add screenshots of the website here once available)
 
 ## 🤝 Contributing
