@@ -1,10 +1,12 @@
 /* Video Gallery */
+/* Container for the video gallery section with padding and top border */
 .video-gallery {
     padding: 3rem 0;
     margin-top: 3rem;
     border-top: 1px solid #eee;
 }
 
+/* Main heading for the video gallery section with blue color and center alignment */
 .video-gallery .section-title {
     text-align: center;
     margin-bottom: 1rem;
@@ -12,6 +14,7 @@
     font-size: 2rem;
 }
 
+/* Subtitle text below the main heading with gray color and center alignment */
 .video-gallery .section-subtitle {
     text-align: center;
     color: #666;
@@ -19,6 +22,7 @@
     font-size: 1.1rem;
 }
 
+/* Grid layout container that creates responsive columns for video items */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -26,6 +30,7 @@
     padding: 1rem;
 }
 
+/* Individual video item card with white background and rounded corners */
 .grid-item {
     background: white;
     border-radius: 10px;
@@ -34,11 +39,13 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect for video items that lifts them up with enhanced shadow */
 .grid-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Responsive video wrapper that maintains 16:9 aspect ratio */
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -46,6 +53,7 @@
     overflow: hidden;
 }
 
+/* Video iframe styling to fill the entire wrapper container */
 .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -55,6 +63,7 @@
     border: none;
 }
 
+/* Text content styling for video descriptions with padding and typography */
 .grid-item p {
     padding: 1rem;
     margin: 0;
@@ -63,18 +72,22 @@
     line-height: 1.5;
 }
 
+/* Mobile responsive styles for video gallery on smaller screens */
 @media (max-width: 768px) {
+    /* Single column layout for mobile devices */
     .grid-container {
         grid-template-columns: 1fr;
         padding: 0.5rem;
     }
     
+    /* Smaller title font size for mobile screens */
     .video-gallery .section-title {
         font-size: 1.5rem;
     }
 }
 
 /* Reset and Base Styles */
+/* Universal reset to remove default margins, padding and set box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -82,6 +95,7 @@
 }
 
 /* Article Cards */
+/* Grid layout container for article cards in responsive columns */
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,6 +103,7 @@
     padding: 2rem 0;
 }
 
+/* Individual article card styling with white background and shadow */
 .article-card {
     background: #fff;
     border-radius: 15px;
@@ -100,11 +115,13 @@
     flex-direction: column;
 }
 
+/* Hover effect for article cards that lifts them up with enhanced shadow */
 .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Article card heading styling with blue color and proper spacing */
 .article-card h3 {
     color: #2c5aa0;
     margin-bottom: 1rem;
@@ -112,12 +129,14 @@
     line-height: 1.4;
 }
 
+/* Article card paragraph text styling with gray color and line spacing */
 .article-card p {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
 
+/* Read more button styling with blue background and hover effects */
 .read-more-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -129,10 +148,12 @@
     align-self: flex-start;
 }
 
+/* Darker blue color for read more button on hover */
 .read-more-btn:hover {
     background: #1a417d;
 }
 
+/* Main body styling with font family, line height and overflow control */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -140,6 +161,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Main container class for consistent width and centering across pages */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -147,6 +169,7 @@ body {
 }
 
 /* Navigation */
+/* Fixed navigation bar at top with transparent background and blur effect */
 .navbar {
     position: fixed;
     top: 0;
@@ -158,6 +181,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Navigation container for centering content and flex layout */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -167,6 +191,7 @@ body {
     align-items: center;
 }
 
+/* Logo section with icon and text displayed side by side */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -176,12 +201,14 @@ body {
     color: #2c5aa0;
 }
 
+/* Logo image styling with circular shape */
 .nav-logo img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
+/* Navigation menu list with horizontal layout and spacing */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -189,6 +216,7 @@ body {
     align-items: center;
 }
 
+/* Individual navigation link styling with hover transition */
 .nav-link {
     text-decoration: none;
     color: #333;
@@ -197,11 +225,13 @@ body {
     position: relative;
 }
 
+/* Active and hover state for navigation links */
 .nav-link:hover,
 .nav-link.active {
     color: #2c5aa0;
 }
 
+/* Call-to-action button styling in navigation with blue background */
 .nav-link.cta-btn {
     background: #2c5aa0;
     color: white !important;
@@ -210,17 +240,20 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for CTA button with darker color and lift animation */
 .nav-link.cta-btn:hover {
     background: #183a6f;
     transform: translateY(-2px);
 }
 
+/* Hamburger menu icon for mobile navigation - hidden by default */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
+/* Individual hamburger bar styling */
 .bar {
     width: 25px;
     height: 3px;
@@ -230,6 +263,7 @@ body {
 }
 
 /* Hero Section */
+/* Full-screen hero section with gradient background and center content */
 .hero {
     height: 100vh;
     display: flex;
@@ -241,24 +275,28 @@ body {
     text-align: center;
 }
 
+/* Hero content container with maximum width and z-index for layering */
 .hero-content {
     z-index: 2;
     max-width: 600px;
     padding: 0 20px;
 }
 
+/* Main hero heading with large font size and fade-in animation */
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
 }
 
+/* Hero subtitle text with animation delay */
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease 0.2s both;
 }
 
+/* Container for hero action buttons with flexible layout */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -267,6 +305,7 @@ body {
     animation: fadeInUp 1s ease 0.4s both;
 }
 
+/* Background video container positioned absolutely behind content */
 .hero-video {
     position: absolute;
     top: 0;
@@ -277,6 +316,7 @@ body {
     opacity: 0.3;
 }
 
+/* Video element styling to cover entire hero area */
 .hero-video video {
     width: 100%;
     height: 100%;
@@ -284,6 +324,7 @@ body {
 }
 
 /* Buttons */
+/* Base button styling with padding, rounded corners and smooth transitions */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -295,51 +336,60 @@ body {
     cursor: pointer;
 }
 
+/* Primary button with blue background and matching border */
 .btn-primary {
     background: #2c5aa0;
     color: white;
     border-color: #2c5aa0;
 }
 
+/* Primary button hover effect with darker color and shadow */
 .btn-primary:hover {
     background: #1e3d6f;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(44, 90, 160, 0.4);
 }
 
+/* Secondary button with transparent background and white border */
 .btn-secondary {
     background: transparent;
     color: white;
     border-color: white;
 }
 
+/* Secondary button hover effect with filled white background */
 .btn-secondary:hover {
     background: white;
     color: #2c5aa0;
 }
 
+/* Outline button with transparent background and blue border */
 .btn-outline {
     background: transparent;
     color: #2c5aa0;
     border-color: #2c5aa0;
 }
 
+/* Outline button hover effect with filled blue background */
 .btn-outline:hover {
     background: #2c5aa0;
     color: white;
 }
 
+/* Large button variant with increased padding and font size */
 .btn-large {
     padding: 15px 40px;
     font-size: 1.1rem;
 }
 
 /* Features Section */
+/* Features section container with padding and light gray background */
 .features {
     padding: 80px 0;
     background: #f8f9fa;
 }
 
+/* Features section main heading with center alignment and blue color */
 .features h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -347,12 +397,14 @@ body {
     color: #2c5aa0;
 }
 
+/* Grid layout for feature cards with responsive columns */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
+/* Individual feature card with white background and shadow */
 .feature-card {
     background: white;
     padding: 2rem;
@@ -362,16 +414,19 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for feature cards that lifts them up */
 .feature-card:hover {
     transform: translateY(-5px);
 }
 
+/* Feature card icon styling with large size and blue color */
 .feature-card i {
     font-size: 3rem;
     color: #2c5aa0;
     margin-bottom: 1rem;
 }
 
+/* Feature card heading with proper sizing and color */
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -379,10 +434,12 @@ body {
 }
 
 /* Activities Preview */
+/* Activities preview section container with generous padding */
 .activities-preview {
     padding: 80px 0;
 }
 
+/* Activities section main heading with center alignment and blue color */
 .activities-preview h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -390,12 +447,14 @@ body {
     color: #2c5aa0;
 }
 
+/* Grid layout for activity cards with responsive columns */
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
+/* Individual activity card with white background and rounded corners */
 .activity-card {
     background: white;
     border-radius: 15px;
@@ -404,32 +463,38 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for activity cards that lifts them up */
 .activity-card:hover {
     transform: translateY(-5px);
 }
 
+/* Activity card image styling with fixed height and cover fit */
 .activity-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
+/* Content area inside activity cards with padding */
 .activity-content {
     padding: 1.5rem;
 }
 
+/* Activity card heading with proper sizing and color */
 .activity-content h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #333;
 }
 
+/* Activity card description text with gray color */
 .activity-content p {
     margin-bottom: 1rem;
     color: #666;
 }
 
 /* CTA Section */
+/* Call-to-action section with gradient background and center alignment */
 .cta-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -437,23 +502,27 @@ body {
     text-align: center;
 }
 
+/* CTA section main heading with large font size */
 .cta-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
+/* CTA section description text with larger font size */
 .cta-section p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
 
 /* Footer */
+/* Main footer container with dark background and white text */
 .footer {
     background: #333;
     color: white;
     padding: 50px 0 20px;
 }
 
+/* Footer content grid layout for responsive columns */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -461,36 +530,43 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Footer section headings with blue color for brand consistency */
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
     color: #2c5aa0;
 }
 
+/* Footer navigation lists with no bullet points */
 .footer-section ul {
     list-style: none;
 }
 
+/* Footer list items with proper spacing */
 .footer-section ul li {
     margin-bottom: 0.5rem;
 }
 
+/* Footer links with light gray color and hover transitions */
 .footer-section a {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Footer link hover effect with blue color */
 .footer-section a:hover {
     color: #2c5aa0;
 }
 
+/* Social media links container with horizontal layout */
 .social-links {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
+/* Individual social media icon styling with circular background */
 .social-links a {
     display: inline-block;
     width: 40px;
@@ -502,11 +578,13 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Social media icon hover effect with darker color and lift animation */
 .social-links a:hover {
     background: #1e3d6f;
     transform: translateY(-2px);
 }
 
+/* Footer bottom section with centered text and border separator */
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -515,6 +593,7 @@ body {
 }
 
 /* Animations */
+/* Fade-in animation that moves elements up from below */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -527,6 +606,7 @@ body {
 }
 
 /* Page Header */
+/* Standard page header with gradient background and center alignment */
 .page-header {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -534,22 +614,26 @@ body {
     text-align: center;
 }
 
+/* Page header main heading with large font size */
 .page-header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
+/* Page header subtitle with reduced opacity for hierarchy */
 .page-header p {
     font-size: 1.2rem;
     opacity: 0.9;
 }
 
 /* Mission Section */
+/* Mission section container with light gray background and padding */
 .mission-section {
     padding: 80px 0;
     background: #f8f9fa;
 }
 
+/* Mission content grid layout with two equal columns */
 .mission-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -557,12 +641,14 @@ body {
     align-items: center;
 }
 
+/* Mission text heading with large font size and blue color */
 .mission-text h2 {
     font-size: 2.5rem;
     color: #2c5aa0;
     margin-bottom: 1.5rem;
 }
 
+/* Mission text paragraphs with increased line height for readability */
 .mission-text p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -570,6 +656,7 @@ body {
     color: #555;
 }
 
+/* Mission image styling with rounded corners and shadow */
 .mission-image img {
     width: 100%;
     border-radius: 15px;
@@ -577,10 +664,12 @@ body {
 }
 
 /* Values Section */
+/* Values section container with standard padding */
 .values-section {
     padding: 80px 0;
 }
 
+/* Values section main heading with center alignment and blue color */
 .values-section h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -588,12 +677,14 @@ body {
     color: #2c5aa0;
 }
 
+/* Grid layout for value cards with responsive columns */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
+/* Individual value card with white background and shadow */
 .value-card {
     background: white;
     padding: 2rem;
@@ -603,22 +694,26 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for value cards that lifts them up */
 .value-card:hover {
     transform: translateY(-5px);
 }
 
+/* Value card icon styling with large size and blue color */
 .value-card i {
     font-size: 3rem;
     color: #2c5aa0;
     margin-bottom: 1rem;
 }
 
+/* Value card heading with proper sizing and color */
 .value-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #333;
 }
 
+/* Value card description text with gray color and line spacing */
 .value-card p {
     color: #666;
     line-height: 1.6;
