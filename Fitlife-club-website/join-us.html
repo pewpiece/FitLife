@@ -90,132 +90,73 @@
             <li><i class="fas fa-check"></i> Community events & meetups</li>
             <li><i class="fas fa-check"></i> 100% Free — No hidden charges</li>
           </ul>
-          <button class="btn btn-primary plan-select" data-plan="community">Join Now</button>
+          <a href="#join-community" class="btn btn-primary">Join Now</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Membership Form -->
-  <section class="membership-form-section">
+  <!-- Join Community Section -->
+  <section id="join-community" class="join-community-section">
     <div class="container">
-      <div class="form-container">
-        <h2>Complete Your Membership</h2>
-        <form id="membershipForm" class="membership-form" action="https://formspree.io/f/mzqgqpqy" method="POST">
-          <input type="hidden" name="_redirect" value="thank-you.html">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required>
-              <span class="error-message"></span>
+      <div class="join-community-content">
+        <div class="join-welcome">
+          <h2>Ready to Transform Your Wellness Journey?</h2>
+          <p class="join-description">
+            Join thousands of students who have already discovered the power of community-driven wellness. 
+            Our supportive environment helps you achieve your fitness goals while building lasting friendships.
+          </p>
+        </div>
+        
+        <div class="community-benefits">
+          <div class="benefit-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Supportive Community</h3>
+              <p>Connect with like-minded students who share your wellness goals</p>
             </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required>
-              <span class="error-message"></span>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Mental Wellness</h3>
+              <p>Access to mental health resources and stress management sessions</p>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required>
-              <span class="error-message"></span>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-calendar"></i>
+              </div>
+              <h3>Regular Activities</h3>
+              <p>Participate in group workouts, yoga sessions, and wellness events</p>
             </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required placeholder="98XXXXXXXX">
-              <span class="error-message"></span>
-              <small class="form-help-text">Please enter your 10-digit mobile number without +977 prefix</small>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="dateOfBirth">Date of Birth *</label>
-              <input type="date" id="dateOfBirth" name="dateOfBirth" required>
-              <span class="error-message"></span>
-            </div>
-            <div class="form-group">
-              <label for="gender">Gender</label>
-              <select id="gender" name="gender">
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-                <option value="prefer-not-to-say">Prefer not to say</option>
-              </select>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <h3>100% Free</h3>
+              <p>No membership fees, no hidden charges - completely free for all students</p>
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="address">Address *</label>
-            <textarea id="address" name="address" rows="3" required></textarea>
-            <span class="error-message"></span>
+        <div class="join-cta">
+          <h3>Ready to Get Started?</h3>
+          <p>Have questions or want to learn more? We're here to help!</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary btn-large">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="mailto:info@techspirecollege.edu.np" class="btn btn-secondary btn-large">
+              <i class="fas fa-paper-plane"></i> Send Email
+            </a>
           </div>
-
-          <div class="form-group">
-            <label for="emergencyContact">Emergency Contact Name *</label>
-            <input type="text" id="emergencyContact" name="emergencyContact" required>
-            <span class="error-message"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="emergencyPhone">Emergency Contact Phone *</label>
-            <input type="tel" id="emergencyPhone" name="emergencyPhone" required placeholder="Enter 10-digit mobile number">
-            <span class="error-message"></span>
-            <small class="form-help-text">Please enter 10-digit mobile number without +977 prefix</small>
-          </div>
-
-          <div class="form-group">
-            <label for="fitnessGoals">Fitness Goals</label>
-            <textarea id="fitnessGoals" name="fitnessGoals" rows="3" placeholder="Tell us about your fitness goals and what you hope to achieve..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="medicalConditions">Medical Conditions/Injuries</label>
-            <textarea id="medicalConditions" name="medicalConditions" rows="3" placeholder="Please list any medical conditions or injuries we should be aware of..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="selectedPlan">Selected Plan *</label>
-            <select id="selectedPlan" name="selectedPlan" required>
-              <option value="community" selected>Community Membership - Free</option>
-            </select>
-            <span class="error-message"></span>
-          </div>
-
-          <div class="form-group checkbox-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="terms" name="terms" required>
-              <span class="checkmark"></span>
-              I agree to the <a href="#" target="_blank">Terms and Conditions</a> *
-            </label>
-            <span class="error-message"></span>
-          </div>
-
-          <div class="form-group checkbox-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="newsletter" name="newsletter">
-              <span class="checkmark"></span>
-              Subscribe to our newsletter for wellness tips and updates
-            </label>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit Application</button>
-          </div>
-
-          <div class="form-group checkbox-group">
-            <label class="checkbox-label">
-              <input type="checkbox" id="waiver" name="waiver" required>
-              <span class="checkmark"></span>
-              I acknowledge that I am participating in fitness activities at my own risk *
-            </label>
-            <span class="error-message"></span>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-large">Complete Membership</button>
-        </form>
+          <p class="cta-note">
+            <i class="fas fa-info-circle"></i>
+            Simply reach out and we'll get you connected with our community!
+          </p>
+        </div>
       </div>
     </div>
   </section>
