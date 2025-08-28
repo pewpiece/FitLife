@@ -280,8 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Validate phone number
     function validatePhone(number) {
-        // Must be exactly 10 digits and start with 98
-        return /^98\d{8}$/.test(number);
+        // Must be exactly 10 digits
+        return /^\d{10}$/.test(number);
     }
 
     console.log('Form validation initialized');
