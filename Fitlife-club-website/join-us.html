@@ -101,8 +101,9 @@
     <div class="container">
       <div class="form-container">
         <h2>Complete Your Membership</h2>
-        <form id="membershipForm" class="membership-form" action="https://formspree.io/f/mzqgqpqy" method="POST">
-          <input type="hidden" name="_redirect" value="thank-you.html">
+        <form id="membershipForm" class="membership-form">
+          <!-- Selected plan will be stored here -->
+          <input type="hidden" id="selectedPlan" name="selectedPlan" value="">
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
@@ -189,7 +190,7 @@
             <label class="checkbox-label">
               <input type="checkbox" id="terms" name="terms" required>
               <span class="checkmark"></span>
-              I agree to the <a href="#" target="_blank">Terms and Conditions</a> *
+              I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a> *
             </label>
             <span class="error-message"></span>
           </div>
@@ -243,10 +244,10 @@
           <h3>Fitlife Club</h3>
           <p>Transforming lives through fitness, nutrition, and mental wellness.</p>
           <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://facebook.com/fitlifeclub" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/fitlifeclub" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/fitlifeclub" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://youtube.com/fitlifeclub" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         <div class="footer-section">
@@ -267,9 +268,9 @@
         </div>
         <div class="footer-section">
           <h4>Contact Info</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Techspire College, Kathmandu, Nepal</p>
+          <p><i class="fas fa-map-marker-alt"></i> Fitlife Wellness Center, Kathmandu, Nepal</p>
           <p><i class="fas fa-phone"></i> +977-1-4567890</p>
-          <p><i class="fas fa-envelope"></i> info@techspirecollege.edu.np</p>
+          <p><i class="fas fa-envelope"></i> info@fitlifeclub.np</p>
         </div>
       </div>
       <div class="footer-bottom">

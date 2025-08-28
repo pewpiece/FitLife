@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.validatePhone = function(phone) {
-        const re = /^[\+]?[1-9][\d]{0,15}$/;
-        return re.test(phone.replace(/\s/g, ''));
+        // Validate Nepali mobile numbers: 10 digits starting with 98
+        return /^98\d{8}$/.test(phone.replace(/\s/g, ''));
     };
 
     // Show success/error messages
@@ -99,42 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}`;
         messageDiv.textContent = message;
-        messageDiv.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-            background: ${type === 'success' ? '#28a745' : '#dc3545'};
-        `;
 
         document.body.appendChild(messageDiv);
 
         setTimeout(() => {
             messageDiv.style.animation = 'slideOut 0.3s ease';
             setTimeout(() => {
-                document.body.removeChild(messageDiv);
+                if (document.body.contains(messageDiv)) {
+                    document.body.removeChild(messageDiv);
+                }
             }, 300);
         }, 3000);
     };
 
-    // Add CSS for message animations
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(style);
+
 
     // Lazy loading for images
     const images = document.querySelectorAll('img[data-src]');
@@ -155,25 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopButton.className = 'back-to-top';
-    backToTopButton.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #2c5aa0;
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        z-index: 1000;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
-    `;
 
     document.body.appendChild(backToTopButton);
 
@@ -192,58 +151,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    backToTopButton.addEventListener('mouseenter', () => {
-        backToTopButton.style.background = '#1e3d6f';
-        backToTopButton.style.transform = 'translateY(-2px)';
-    });
-
-    backToTopButton.addEventListener('mouseleave', () => {
-        backToTopButton.style.background = '#2c5aa0';
-        backToTopButton.style.transform = 'translateY(0)';
-    });
-
-    // Loading animation for page transitions
-    window.showLoading = function() {
-        const loader = document.createElement('div');
-        loader.id = 'page-loader';
-        loader.innerHTML = '<div class="spinner"></div>';
-        loader.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-        `;
-
-        const spinnerStyle = document.createElement('style');
-        spinnerStyle.textContent = `
-            .spinner {
-                width: 50px;
-                height: 50px;
-                border: 5px solid #f3f3f3;
-                border-top: 5px solid #2c5aa0;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(spinnerStyle);
-        document.body.appendChild(loader);
-
-        setTimeout(() => {
-            if (document.getElementById('page-loader')) {
-                document.body.removeChild(loader);
-            }
-        }, 1000);
-    };
-
-    console.log('Fitlife Club website loaded successfully!');
 });

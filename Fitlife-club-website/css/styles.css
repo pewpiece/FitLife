@@ -1,12 +1,10 @@
 /* Video Gallery */
-/* Container for the video gallery section with padding and top border */
 .video-gallery {
     padding: 3rem 0;
     margin-top: 3rem;
     border-top: 1px solid #eee;
 }
 
-/* Main heading for the video gallery section with blue color and center alignment */
 .video-gallery .section-title {
     text-align: center;
     margin-bottom: 1rem;
@@ -14,7 +12,6 @@
     font-size: 2rem;
 }
 
-/* Subtitle text below the main heading with gray color and center alignment */
 .video-gallery .section-subtitle {
     text-align: center;
     color: #666;
@@ -22,7 +19,7 @@
     font-size: 1.1rem;
 }
 
-/* Grid layout container that creates responsive columns for video items */
+/* Grid layout container */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1611,4 +1608,62 @@ body {
 .content-section p {
     font-size: 1.2rem;
     color: #666;
+}
+
+/* Message notifications */
+.message {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 10000;
+    animation: slideIn 0.3s ease;
+}
+
+.message.success {
+    background: #28a745;
+}
+
+.message.error {
+    background: #dc3545;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+}
+
+.back-to-top:hover {
+    background: #1e3d6f;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
 }
