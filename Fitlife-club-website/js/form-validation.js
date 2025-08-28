@@ -1,6 +1,159 @@
 // Form Validation for Fitlife Club Website
 
 document.addEventListener('DOMContentLoaded', function() {
+    const membershipForm = document.getElementById('membershipForm');
+    const planButtons = document.querySelectorAll('.plan-select');
+    const selectedPlanField = document.getElementById('selectedPlan');
+
+    // Plan selection functionality
+    planButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const plan = this.getAttribute('data-plan');
+            selectedPlanField.value = plan;
+            
+            // Update visual feedback
+            document.querySelectorAll('.plan-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            this.closest('.plan-card').classList.add('selected');
+            
+            // Scroll to form
+            document.querySelector('.membership-form-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            showMessage(`${plan.charAt(0).toUpperCase() + plan.slice(1)} plan selected!`, 'success');
+        });
+    });
+
+    // Form validation
+    if (membershipForm) {
+        membershipForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                submitForm();
+            }
+        });
+
+        // Real-time validation
+        const inputs = membershipForm.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('input', function() {
+                clearError(this);
+            });
+        });
+    }
+
+    function validateForm() {
+        let isValid = true;
+        const requiredFields = membershipForm.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!validateField(field)) {
+                isValid = false;
+            }
+        });
+
+        return isValid;
+    }
+
+    function validateField(field) {
+        const value = field.value.trim();
+        const fieldName = field.name;
+        let isValid = true;
+        let errorMessage = '';
+
+        // Clear previous errors
+        clearError(field);
+
+        // Required field validation
+        if (field.hasAttribute('required') && !value) {
+            errorMessage = 'This field is required';
+            isValid = false;
+        }
+        // Email validation
+        else if (fieldName === 'email' && value && !validateEmail(value)) {
+            errorMessage = 'Please enter a valid email address';
+            isValid = false;
+        }
+        // Phone validation
+        else if ((fieldName === 'phone' || fieldName === 'emergencyPhone') && value && !validatePhone(value)) {
+            errorMessage = 'Please enter a valid phone number';
+            isValid = false;
+        }
+        // Date of birth validation
+        else if (fieldName === 'dateOfBirth' && value) {
+            const birthDate = new Date(value);
+            const today = new Date();
+            const age = today.getFullYear() - birthDate.getFullYear();
+            
+            if (age < 16) {
+                errorMessage = 'You must be at least 16 years old to join';
+                isValid = false;
+            } else if (age > 100) {
+                errorMessage = 'Please enter a valid date of birth';
+                isValid = false;
+            }
+        }
+        // Name validation
+        else if ((fieldName === 'firstName' || fieldName === 'lastName' || fieldName === 'emergencyContact') && value) {
+            if (value.length < 2) {
+                errorMessage = 'Name must be at least 2 characters long';
+                isValid = false;
+            } else if (!/^[a-zA-Z\s'-]+$/.test(value)) {
+                errorMessage = 'Name can only contain letters, spaces, hyphens, and apostrophes';
+                isValid = false;
+            }
+        }
+
+        if (!isValid) {
+            showError(field, errorMessage);
+        }
+
+        return isValid;
+    }
+
+    function showError(field, message) {
+        field.classList.add('error');
+        const errorElement = field.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+
+    function clearError(field) {
+        field.classList.remove('error');
+        const errorElement = field.parentNode.querySelector('.error-message');
+        if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+        }
+    }
+
+    function submitForm() {
+        // Show loading state
+        const submitButton = membershipForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Processing...';
+        submitButton.disabled = true;
+
+        // Simulate form submission
+        setTimeout(() => {
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+
+            // Redirect to thank-you page
+            window.location.href = 'thank-you.html';
+        }, 2000);
+    }
+
     // Contact form validation (if exists)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -40,45 +193,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validateContactField(field) {
         const value = field.value.trim();
+        const fieldName = field.name;
         let isValid = true;
         let errorMessage = '';
 
+        clearError(field);
+
         if (field.hasAttribute('required') && !value) {
-            isValid = false;
             errorMessage = 'This field is required';
-        } else if (field.type === 'email' && value && !validateEmail(value)) {
             isValid = false;
+        }
+        else if (fieldName === 'email' && value && !validateEmail(value)) {
             errorMessage = 'Please enter a valid email address';
-        } else if (field.type === 'tel' && value && !validatePhone(value)) {
             isValid = false;
+        }
+        else if (fieldName === 'phone' && value && !validatePhone(value)) {
             errorMessage = 'Please enter a valid phone number';
+            isValid = false;
+        }
+        else if (fieldName === 'name' && value && value.length < 2) {
+            errorMessage = 'Name must be at least 2 characters long';
+            isValid = false;
+        }
+        else if (fieldName === 'message' && value && value.length < 10) {
+            errorMessage = 'Message must be at least 10 characters long';
+            isValid = false;
         }
 
         if (!isValid) {
             showError(field, errorMessage);
-        } else {
-            clearError(field);
         }
 
         return isValid;
-    }
-
-    function showError(field, message) {
-        field.classList.add('error');
-        const errorElement = field.parentNode.querySelector('.error-message');
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-        }
-    }
-
-    function clearError(field) {
-        field.classList.remove('error');
-        const errorElement = field.parentNode.querySelector('.error-message');
-        if (errorElement) {
-            errorElement.textContent = '';
-            errorElement.style.display = 'none';
-        }
     }
 
     function submitContactForm() {
@@ -90,9 +236,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-            showMessage('Thank you for your message! We\'ll get back to you soon.', 'success');
+            
+            showMessage('Message sent successfully! We will get back to you soon.', 'success');
             contactForm.reset();
-        }, 2000);
+        }, 1500);
     }
 
     // Newsletter signup validation
@@ -117,55 +264,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove any non-digit characters
             let value = this.value.replace(/\D/g, '');
             
-            // Limit to 10 digits for Nepal mobile numbers
+            // Restrict to 10 digits
             if (value.length > 10) {
-                value = value.substring(0, 10);
+                value = value.slice(0, 10);
+            }
+            
+            // Ensure starts with 98
+            if (value.length >= 2 && value.substring(0, 2) !== '98') {
+                value = '98' + value.substring(2);
             }
             
             this.value = value;
         });
     });
 
-    // Form validation helper functions (used by main.js)
-    window.validateEmail = function(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    };
-
-    window.validatePhone = function(phone) {
-        const re = /^[+]?[1-9][\d]{0,15}$/;
-        return re.test(phone.replace(/\s/g, ''));
-    };
-
-    window.showMessage = function(message, type = 'success') {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${type}`;
-        messageDiv.textContent = message;
-        messageDiv.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 1rem 1.5rem;
-            border-radius: 5px;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-            ${type === 'success' ? 'background: #28a745;' : 'background: #dc3545;'}
-        `;
-
-        document.body.appendChild(messageDiv);
-
-        // Auto remove after 3 seconds
-        setTimeout(() => {
-            messageDiv.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => {
-                if (messageDiv.parentNode) {
-                    messageDiv.parentNode.removeChild(messageDiv);
-                }
-            }, 300);
-        }, 3000);
-    };
+    // Validate phone number
+    function validatePhone(number) {
+        // Must be exactly 10 digits and start with 98
+        return /^98\d{8}$/.test(number);
+    }
 
     console.log('Form validation initialized');
 });
