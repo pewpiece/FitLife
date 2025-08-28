@@ -149,8 +149,14 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = originalText;
             submitButton.disabled = false;
 
-            // Redirect to thank-you page
-            window.location.href = 'thank-you.html';
+            // Show success message and reset form
+            showMessage('Membership application submitted successfully! We will contact you soon.', 'success');
+            membershipForm.reset();
+            
+            // Remove any selected plan visual feedback
+            document.querySelectorAll('.plan-card').forEach(card => {
+                card.classList.remove('selected');
+            });
         }, 2000);
     }
 
@@ -278,11 +284,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Validate phone number
+    // Validate phone number for Nepali mobile numbers
     function validatePhone(number) {
-        // Must be exactly 10 digits
-        return /^\d{10}$/.test(number);
+        // Must be exactly 10 digits starting with 98 (for Nepal)
+        return /^98\d{8}$/.test(number);
     }
 
-    console.log('Form validation initialized');
+
 });
